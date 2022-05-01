@@ -1,4 +1,6 @@
+<p align="center">
 <img src="./Bissmillah.svg" class="center"></p>
+</p>
 
 # RustNet
 
@@ -81,7 +83,11 @@ To Run the example open a terminal and type the following:
 
 this will create a mesh network with 4 nodes, each node runing in a seperate docker container:
 
-<video width="640" height="480" controls>
-  <source src="./testingFDandURB.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+https://user-images.githubusercontent.com/24751547/166156115-513458b9-7c33-4fb6-b850-ea50e4a48212.mp4
+
+# Contact
+email : salih.houadef@univ-constantine2.dz
+
+linkedin : https://www.linkedin.com/in/houadef-salih-2b92a0188
+
