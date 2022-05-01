@@ -14,9 +14,9 @@ A Fast and Recative Distributed Systems ToolBox
 - extensible
 
 # install
-
+Add this to your cargo.toml file
 ```
-cargo install rust_net
+rust_net = "0.1.1"
 ```
 
 # Components
