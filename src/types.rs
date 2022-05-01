@@ -9,6 +9,8 @@ use serde_json::Result;
 // static serial number that increments each time a message gets created
 static SN: OnceCell<Mutex<i64>> = OnceCell::new();
 
+/// a wrapper around all types of messages
+// need to update this
 #[derive(Serialize, Deserialize, Clone)]
 pub struct Message {
     pub message_type: MessageType,
@@ -29,6 +31,8 @@ impl Message {
     }
 }
 
+/// all message types must be included in this eunm even newly added component
+
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
 pub enum MessageType {
     HeartBeat,
@@ -39,6 +43,7 @@ pub enum MessageType {
     UniformReliableDelivery,
     AckDelivery,
 }
+
 #[derive(PartialEq, Eq, Hash, Clone)]
 pub enum NetComponents {
     FaillureDetector = 1,
@@ -46,18 +51,7 @@ pub enum NetComponents {
     BestEffortDelivery = 3,
     UniformReliableDelivery = 4,
 }
-
-#[derive(Debug)]
-pub struct Peer {
-    pub addr: String,
-}
-
-impl Peer {
-    pub fn new(addr: String) -> Self {
-        Self { addr }
-    }
-}
-
+/// a set of channels that every component must have to communicate with external and internal messages
 pub struct ComponentChannels {
     pub rc: Receiver<Message>,
     pub publisher: PubSub<Message>,
@@ -69,6 +63,7 @@ impl ComponentChannels {
     }
 }
 
+/// NetComponent Trait must be implemeneted to add a new component
 pub trait NetComponent {
     fn add_component_channels(&mut self, cmp: ComponentChannels);
     fn start(&mut self);

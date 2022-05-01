@@ -1,3 +1,11 @@
+//# Reliable Delivery
+//! gurantees reliability independent of whether the sender is correct or not
+//!
+//! it ensures all or none of the correct nodes gets the message
+//!
+//! even if the sender crashes without delivering the message to everyone, every correct node that already received the message will play the role of the sender
+//!
+//! Requires a Faillure detector
 use std::{
     collections::HashMap,
     net::TcpStream,

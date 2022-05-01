@@ -1,3 +1,5 @@
+//# Best effort delivery
+//!  Gurantees reliability only if sender is correct
 use std::net::TcpStream;
 
 use crate::Message;

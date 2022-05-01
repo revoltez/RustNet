@@ -1,7 +1,5 @@
 //# Faillure Detector
-//!
-/// Perfect Faillure Detector that Assumes Synchrony which means the Timing Bounds of the
-/// network and the processes are fixed with the timeout variable
+//!assumes synchrony which means timing Bounds of network and processes are fixed with the `timeout` variable
 use std::{
     collections::HashMap,
     net::{SocketAddr, TcpStream},
@@ -15,6 +13,9 @@ use colored::Colorize;
 use flume::Receiver;
 
 use crate::types::*;
+//# Faillure Detector
+/// Perfect Faillure Detector that Assumes Synchrony which means the Timing Bounds of the
+/// network and the processes are fixed with the timeout variable
 
 pub struct FaillureDetector {
     nodes_status: Arc<Mutex<HashMap<String, bool>>>,

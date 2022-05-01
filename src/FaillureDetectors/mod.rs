@@ -1,1 +1,1 @@
-pub mod FD;
+pub mod FaillureDetector;

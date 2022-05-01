@@ -1,3 +1,6 @@
+//# Uniform Reliable Delivery
+//! gurantees reliability and also considers the behaviour of failed nodes,
+//! reliable Delivery is faster but it doesnt gurantee if all nodes delivered the message including Failled nodes
 use std::{
     collections::HashMap,
     net::{SocketAddr, TcpStream},
