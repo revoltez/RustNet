@@ -5,6 +5,8 @@ authors = ["Houadef_Salih <houadef.salih@univ-constantine2.dz>"]
 edition = "2018"
 description="A fast and Reactive distributed systems toolbox"
 license="MIT"
+readme="Readme.md"
+repository="https://github.com/revoltez/RustNet"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
