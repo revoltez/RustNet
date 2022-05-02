@@ -9,7 +9,7 @@ A Fast and Reactive Distributed Systems ToolBox
 # charachteristics
 
 - Simplistic and Clean Architecture (builder/mediator)
-- unopinianated in that it has minimum dependancies to third party libraries
+- has minimum dependancies to third party libraries
 - loosely coupled components
 - extensible
 
