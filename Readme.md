@@ -4,7 +4,7 @@
 
 # RustNet
 
-A Fast and Recative Distributed Systems ToolBox
+A Fast and Reactive Distributed Systems ToolBox
 
 # charchteristics
 
