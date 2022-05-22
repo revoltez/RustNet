@@ -17,6 +17,7 @@ use crate::types::*;
 /// Perfect Faillure Detector that Assumes Synchrony which means the Timing Bounds of the
 /// network and the processes are fixed with the timeout variable
 
+
 pub struct FaillureDetector {
     nodes_status: Arc<Mutex<HashMap<String, bool>>>,
     temp_status: Arc<Mutex<HashMap<String, bool>>>,
