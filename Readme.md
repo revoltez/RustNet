@@ -4,7 +4,7 @@
 
 # RustNet
 
-A Fast and Reactive Distributed Systems ToolBox
+A Reactive Distributed Systems ToolBox
 
 # charachteristics
 
@@ -14,7 +14,9 @@ A Fast and Reactive Distributed Systems ToolBox
 - extensible
 
 # install
+
 Add this to your cargo.toml file
+
 ```
 rust_net = "0.1.1"
 ```
@@ -28,7 +30,7 @@ rust_net = "0.1.1"
 - Node acts as a mediator between components in that it receives external calls and forward them to the appropriate Components
 - can register user defined callbacks upon receival of external Messages
 
-PS: Order of Components mut be respected in order for Node to work correctly, For example the all Reliable Delivery Components Requires a Faillure detector
+PS: Order of Components mut be respected in order for Node to work correctly, For example every Reliable Delivery Component Requires a Faillure detector, which means messing up the order will panic before node starts executing.
 
 ## Faillure Detector
 
@@ -83,11 +85,10 @@ To Run the example open a terminal and type the following:
 
 this will create a mesh network with 4 nodes, each node runing in a seperate docker container:
 
-
 https://user-images.githubusercontent.com/24751547/166156115-513458b9-7c33-4fb6-b850-ea50e4a48212.mp4
 
 # Contact
+
 email : salih.houadef@univ-constantine2.dz
 
 linkedin : https://www.linkedin.com/in/houadef-salih-2b92a0188
-
