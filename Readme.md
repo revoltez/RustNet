@@ -2,7 +2,7 @@
 <img src="./Bissmillah.svg" class="center"></p>
 </p>
 
-# RustNet
+# rust_net
 
 A Reactive Distributed Systems ToolBox
 
@@ -39,16 +39,16 @@ PS: Order of Components mut be respected in order for Node to work correctly, Fo
 ## Delivery
 
 - BestEffor Delivery
-  - Gurantees reliability only if sender is correct
+     - Gurantees reliability only if sender is correct
 - Reliable Delivery
-  - gurantees reliability independent of whether the sender is correct or not
-  - it ensures all or none of the correct nodes gets the message
-  - even if the sender crashes without delivering the message to everyone, every correct node that already received the message will play the role of the sender
-  - Requires a Faillure detector
-  - example: need to guarantee that a message is reached to all correct nodes even if if the sender crashes after sending to one correct node.
+     - gurantees reliability independent of whether the sender is correct or not
+     - it ensures all or none of the correct nodes gets the message
+     - even if the sender crashes without delivering the message to everyone, every correct node that already received the message will play the role of the sender
+     - Requires a Faillure detector
+     - example: need to guarantee that a message is reached to all correct nodes even if if the sender crashes after sending to one correct node.
 - uniform Reliable Delivery
-  - gurantees reliability and also considers the behaviour of failed nodes,
-  - reliable Delivery is faster but it doesnt gurantee if all nodes delivered the message including Failled nodes
+     - gurantees reliability and also considers the behaviour of failed nodes,
+     - reliable Delivery is faster but it doesnt gurantee if all nodes delivered the message including Failled nodes
 
 # Example
 

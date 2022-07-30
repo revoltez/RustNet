@@ -17,8 +17,7 @@ use crate::types::*;
 /// Perfect Faillure Detector that Assumes Synchrony which means the Timing Bounds of the
 /// network and the processes are fixed with the timeout variable
 
-
-pub struct FaillureDetector {
+pub struct FailureDetector {
     nodes_status: Arc<Mutex<HashMap<String, bool>>>,
     temp_status: Arc<Mutex<HashMap<String, bool>>>,
     timeout: Duration,
@@ -27,16 +26,16 @@ pub struct FaillureDetector {
     component_channels: Option<ComponentChannels>,
     peers: Vec<String>,
 }
-impl FaillureDetector {
-    /// Creates a new faillure detector
+impl FailureDetector {
+    /// Creates a new failure detector
     pub fn new(
         peers_threashold: usize,
         timeout: Duration,
         delay: Duration,
         addr: String,
         peers: Vec<String>,
-    ) -> FaillureDetector {
-        FaillureDetector {
+    ) -> FailureDetector {
+        FailureDetector {
             nodes_status: Arc::new(Mutex::new(HashMap::with_capacity(peers_threashold))),
             temp_status: Arc::new(Mutex::new(HashMap::with_capacity(peers_threashold))),
             timeout, //represensts the time needed for nodes to receive the sent heartbeat and reply with another heartbeat
@@ -48,7 +47,7 @@ impl FaillureDetector {
     }
 }
 
-impl NetComponent for FaillureDetector {
+impl NetComponent for FailureDetector {
     /// starts the Faillure detector by sending and receiving heartbeats and checking nodes status after each timeout + delay seconds
     fn start(&mut self) {
         let fd_rc = self.component_channels.as_ref().unwrap().rc.clone();

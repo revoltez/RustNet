@@ -16,7 +16,7 @@ fn main() {
 
     let mut node = Node::new("First".to_string(), 8888, 5);
     node.add_peers(peers)
-        .has_faillure_detector(Duration::from_millis(3000), Duration::from_millis(2000))
+        .has_failure_detector(Duration::from_millis(3000), Duration::from_millis(2000))
         .on_receive_message(
             MessageType::UniformReliableDelivery,
             Box::new(|msg| {
@@ -41,7 +41,7 @@ fn main() {
     ctrlc::set_handler(|| {
         exit(0);
     })
-    .expect("Failled exiing process");
+    .expect("Failled exiting process");
 
     nodehandle.join().expect("Failled Joining node handle"); // will never join
 }

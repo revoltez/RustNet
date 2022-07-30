@@ -1,5 +1,5 @@
+use crate::failure_detectors::failure_detector::FailureDetector;
 use crate::types::{ComponentChannels, Message, MessageType, NetComponent, NetComponents};
-use crate::FaillureDetector::FaillureDetector;
 use crate::ReliableDelivery::ReliableDelivery;
 use crate::UniformReliableDelivery::UniformReliableDelivery;
 use colored::Colorize;
@@ -106,14 +106,14 @@ impl Node {
         self.components.insert(cmp_type, Some(component));
     }
 
-    pub fn has_faillure_detector(&mut self, timeout: Duration, delay: Duration) -> &mut Node {
+    pub fn has_failure_detector(&mut self, timeout: Duration, delay: Duration) -> &mut Node {
         let mut peers = Vec::new();
         for peer in self.peers.iter() {
             if *peer != self.addr {
                 peers.push(peer.clone());
             }
         }
-        let fd = FaillureDetector::new(
+        let fd = FailureDetector::new(
             self.peers_threashold,
             timeout,
             delay,

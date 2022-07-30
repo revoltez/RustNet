@@ -3,12 +3,12 @@
 //!
 //! RustNet is a set of tools to make building distributed systems easier
 mod Delivery;
-mod FaillureDetectors;
+mod failure_detectors;
 mod node;
+pub use failure_detectors::failure_detector;
 pub use node::Node;
 pub use types::{ComponentChannels, Message, MessageType, NetComponent, NetComponents};
 pub use Delivery::{BestEffortDelivery, ReliableDelivery, UniformReliableDelivery};
-pub use FaillureDetectors::FaillureDetector;
 mod types;
 #[cfg(test)]
 mod tests {
