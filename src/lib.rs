@@ -8,7 +8,7 @@ mod node;
 pub use delivery::{BestEffortDelivery, ReliableDelivery, UniformReliableDelivery};
 pub use failure_detectors::failure_detector;
 pub use node::Node;
-pub use types::{ComponentChannels, Message, MessageType, NetComponent, NetComponents};
+pub use types::{ComponentChannels, ComponentTypes, Message, MessageType, NetComponent};
 mod types;
 #[cfg(test)]
 mod tests {

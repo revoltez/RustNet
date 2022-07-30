@@ -1,5 +1,5 @@
 use crate::failure_detectors::failure_detector::FailureDetector;
-use crate::types::{ComponentChannels, Message, MessageType, NetComponent, NetComponents};
+use crate::types::{ComponentChannels, ComponentTypes, Message, MessageType, NetComponent};
 use crate::ReliableDelivery::ReliableDelivery;
 use crate::UniformReliableDelivery::UniformReliableDelivery;
 use colored::Colorize;
@@ -30,8 +30,8 @@ pub struct Node {
     listner: TcpListener,
     ready: bool,
     pub message_broker: Arc<Mutex<HashMap<MessageType, Vec<Sender<Message>>>>>,
-    pub publishers: HashMap<NetComponents, PubSub<Message>>, // used only for cloning to newer components
-    pub components: HashMap<NetComponents, Option<Box<dyn NetComponent>>>,
+    pub publishers: HashMap<ComponentTypes, PubSub<Message>>, // used only for cloning to newer components
+    pub components: HashMap<ComponentTypes, Option<Box<dyn NetComponent>>>,
     pub user_callbacks: Arc<Mutex<HashMap<MessageType, Vec<Box<dyn Fn(&Message) + Send>>>>>,
 }
 
@@ -78,9 +78,9 @@ impl Node {
     pub fn add_component(
         &mut self,
         mut component: Box<dyn NetComponent>,
-        cmp_type: NetComponents,
+        cmp_type: ComponentTypes,
         messages: Vec<MessageType>,
-        target_componets: Vec<NetComponents>,
+        target_componets: Vec<ComponentTypes>,
     ) {
         let (_tx, _rc) = flume::unbounded();
         let pub_sub_channel: PubSub<Message> = pub_sub::PubSub::new();
@@ -97,6 +97,7 @@ impl Node {
             message_broker.entry(msg_type.clone()).or_insert(Vec::new());
             message_broker.get_mut(msg_type).unwrap().push(_tx.clone());
         }
+        // target components for which you want to subscribe messages to
         for target_cmp in target_componets.iter() {
             component_channels
                 .subscriptions
@@ -123,7 +124,7 @@ impl Node {
         let messages = vec![MessageType::HeartBeat, MessageType::RequestHeartBeat];
         self.add_component(
             Box::new(fd),
-            NetComponents::FaillureDetector,
+            ComponentTypes::FaillureDetector,
             messages,
             Vec::new(),
         );
@@ -134,13 +135,13 @@ impl Node {
         let rb = ReliableDelivery::new(self.peers.clone());
         if self
             .components
-            .contains_key(&NetComponents::FaillureDetector)
+            .contains_key(&ComponentTypes::FaillureDetector)
         {
             let messages = vec![MessageType::ReliableDelivery];
-            let target_components = vec![NetComponents::FaillureDetector];
+            let target_components = vec![ComponentTypes::FaillureDetector];
             self.add_component(
                 Box::new(rb),
-                NetComponents::ReliableDelivery,
+                ComponentTypes::ReliableDelivery,
                 messages,
                 target_components,
             );
@@ -154,16 +155,16 @@ impl Node {
         let urb = UniformReliableDelivery::new(self.addr.clone(), self.peers.clone());
         if self
             .components
-            .contains_key(&NetComponents::FaillureDetector)
+            .contains_key(&ComponentTypes::FaillureDetector)
         {
             let messages = vec![
                 MessageType::UniformReliableDelivery,
                 MessageType::AckDelivery,
             ];
-            let target_components = vec![NetComponents::FaillureDetector];
+            let target_components = vec![ComponentTypes::FaillureDetector];
             self.add_component(
                 Box::new(urb),
-                NetComponents::UniformReliableDelivery,
+                ComponentTypes::UniformReliableDelivery,
                 messages,
                 target_components,
             );
