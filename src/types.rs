@@ -15,7 +15,7 @@ static SN: OnceCell<Mutex<i64>> = OnceCell::new();
 pub struct Message {
     pub message_type: MessageType,
     pub info: String,
-    pub source: String,
+    pub source: String, // creator of the message
     pub sender: String, //sender could resend a message from source
     pub sn: i64,
 }
