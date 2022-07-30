@@ -48,9 +48,10 @@ PS: Order addition of Components mut be respected in order for Node to work corr
      - it ensures all or none of the correct nodes gets the message
      - even if the sender crashes without delivering the message to everyone, every correct node that already received the message will play the role of the sender
      - Requires a Faillure detector
-     - example: need to guarantee that a message is reached to all correct nodes even if if the sender crashes after sending to one correct node.
 
-- uniform Reliable Delivery
+Example: need to guarantee that a message is reached to all correct nodes even if if the sender crashes after sending to one correct node.
+
+- Uniform Reliable Delivery
 
      - gurantees reliability and also considers the behaviour of failed nodes,
      - reliable Delivery is faster but it doesnt gurantee if all nodes delivered the message including Failled nodes
@@ -92,6 +93,12 @@ this will create a mesh network with 4 nodes, each node runing in a seperate doc
 
 https://user-images.githubusercontent.com/24751547/166156115-513458b9-7c33-4fb6-b850-ea50e4a48212.mp4
 
+# TODO
+- [ ] Add Lamport Logical Clock component
+- [ ] Add Vector clocks component
+- [ ] Add causal delivery component
+
+ 
 # Contact
 
 email : salih.houadef@univ-constantine2.dz
