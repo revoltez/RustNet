@@ -4,7 +4,7 @@
 
 # rust_net
 
-A Reactive Distributed Systems ToolBox
+A Reactive Distributed Systems ToolBox, it provides an easy modular approach to architect your Distributed application
 
 # charachteristics
 
@@ -25,12 +25,12 @@ rust_net = "0.1.1"
 
 ## Node
 
-- abstracts all the complexity of Rustnet in few customizable Builder statements
-- add your own components with one line and without worrying about the implementation details of communicating with other components
+- abstracts all the complexity of rust_net in few customizable Builder statements
+- add your own components without worrying about the implementation details of communicating with other components
 - Node acts as a mediator between components in that it receives external calls and forward them to the appropriate Components
 - can register user defined callbacks upon receival of external Messages
 
-PS: Order of Components mut be respected in order for Node to work correctly, For example every Reliable Delivery Component Requires a Faillure detector, which means messing up the order will panic before node starts executing.
+PS: Order addition of Components mut be respected in order for Node to work correctly, For example every Reliable Delivery Component Requires a Faillure detector, which means messing up the order will panic before node starts executing.
 
 ## Faillure Detector
 
@@ -52,7 +52,7 @@ PS: Order of Components mut be respected in order for Node to work correctly, Fo
 
 # Example
 
-- create a Node that has a Faillure detector,Commits Messages only if all nodes Commit, has 5 maximum peers and triggers a user defined callback whenever a Uniform Reliable Deliver message is received
+- create a Node that has a Faillure detector,Commits Messages only if all nodes Commit, has 5 maximum peers and triggers a user defined callback whenever a Uniform Reliable Delivery message is received
 
 ```
 let peers = vec![
