@@ -8,10 +8,10 @@ A Reactive Distributed Systems ToolBox, it provides an easy modular approach to 
 
 # charachteristics
 
-- Simplistic and Clean Architecture (builder/mediator)
-- has minimum dependancies to third party libraries
-- loosely coupled components
-- extensible
+- Simplistic and Clean Architecture
+- Has minimum dependancies to third party libraries
+- Loosely coupled components
+- Extensible
 
 # install
 
