@@ -18,7 +18,7 @@ A Reactive Distributed Systems ToolBox, it provides an easy modular approach to 
 Add this to your cargo.toml file
 
 ```
-rust_net = "0.1.1"
+rust_net = "1.0.0"
 ```
 
 # Components
