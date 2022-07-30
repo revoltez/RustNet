@@ -5,7 +5,7 @@
 mod delivery;
 mod failure_detectors;
 mod node;
-pub use delivery::{BestEffortDelivery, ReliableDelivery, UniformReliableDelivery};
+pub use delivery::{best_effort_delivery, reliable_delivery, uniform_reliable_delivery};
 pub use failure_detectors::failure_detector;
 pub use node::Node;
 pub use types::{ComponentChannels, ComponentTypes, Message, MessageType, NetComponent};

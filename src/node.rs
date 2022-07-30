@@ -1,7 +1,7 @@
-use crate::failure_detectors::failure_detector::FailureDetector;
+use crate::failure_detector::FailureDetector;
+use crate::reliable_delivery::ReliableDelivery;
 use crate::types::{ComponentChannels, ComponentTypes, Message, MessageType, NetComponent};
-use crate::ReliableDelivery::ReliableDelivery;
-use crate::UniformReliableDelivery::UniformReliableDelivery;
+use crate::uniform_reliable_delivery::UniformReliableDelivery;
 use colored::Colorize;
 use flume::Sender;
 use local_ip_address::local_ip;
