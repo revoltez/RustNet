@@ -1,3 +1,3 @@
-pub mod BestEffortDelivery;
-pub mod ReliableDelivery;
-pub mod UniformReliableDelivery;
+pub mod best_effort_delivery;
+pub mod reliable_delivery;
+pub mod uniform_reliable_delivery;

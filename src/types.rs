@@ -45,7 +45,7 @@ pub enum MessageType {
 }
 
 #[derive(PartialEq, Eq, Hash, Clone)]
-pub enum NetComponents {
+pub enum ComponentTypes {
     FaillureDetector = 1,
     ReliableDelivery = 2,
     BestEffortDelivery = 3,
