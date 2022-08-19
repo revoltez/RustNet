@@ -33,7 +33,7 @@ every component must implement the ```NetComponent``` trait so it could be easil
 - Node acts as a mediator between components in that it receives external calls and forward them to the appropriate Components
 - can register user defined callbacks upon receival of external Messages
 
-PS: Order addition of Components mut be respected in order for Node to work correctly, For example every Reliable Delivery Component Requires a Faillure detector, which means messing up the order will cause node to panic before execution.
+PS: Order of addition of Components mut be respected in order for Node to work correctly, For example every Reliable Delivery Component Requires a Faillure detector, which means messing up the order will cause node to panic before execution.
 
 ## Faillure Detector
 
