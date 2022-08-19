@@ -22,10 +22,13 @@ rust_net = "1.0.0"
 ```
 
 # Components
+Components are threads that communicate by sending messages to each other via ```flume``` channels(very similar to mpsc channels), and by also publishing and subscribing to certain messages(like broadcasting messages to whomever is interetsed).
+
+every component must implement the ```NetComponent``` trait so it could be easily hooked with other components.
 
 ## Node
 
-- abstracts all the complexity of rust_net in few customizable Builder statements
+- a mediator between component, for a fast and easy way to get started with rust_net components
 - add your own components without worrying about the implementation details of communicating with other components
 - Node acts as a mediator between components in that it receives external calls and forward them to the appropriate Components
 - can register user defined callbacks upon receival of external Messages
