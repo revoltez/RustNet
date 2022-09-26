@@ -106,4 +106,4 @@ https://user-images.githubusercontent.com/24751547/166156115-513458b9-7c33-4fb6-
 
 email : salih.houadef@univ-constantine2.dz
 
-linkedin : https://www.linkedin.com/in/houadef-salih-2b92a0188
+linkedin : https://www.linkedin.com/in/houadef-salih
