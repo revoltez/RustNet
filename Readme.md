@@ -1,12 +1,16 @@
 <p align="center">
-<img src="./Bissmillah.svg" class="center"></p>
+<img src="./Bissmillah.svg" height="100px" width="300px" class="center"></p>
 </p>
 
 # rust_net
-
+<p align="center">
+<img src="https://user-images.githubusercontent.com/24751547/203266935-a71a4f77-58c9-4f30-b79f-c736fce3e2b3.png" class="center"></p>
+</p>
 A Reactive Distributed Systems ToolBox, it provides an easy modular approach to architect your Distributed application.
 
 
+
+##
 > __Warning__:
 *this project is for learning purposes only, it should not be used in production, instead check [libp2p](https://libp2p.io/) and its rust implementation*
 # charachteristics
