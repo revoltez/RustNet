@@ -4,11 +4,13 @@
 
 # rust_net
 
-A Reactive Distributed Systems ToolBox, it provides an easy modular approach to architect your Distributed application
+A Reactive Distributed Systems ToolBox, it provides an easy modular approach to architect your Distributed application.
 
+
+> __Warning__:
+*this project is for learning purposes only, especially for beginners that want to implement a simple network in a modular approach, it should not be used in production, instead check [libp2p](https://libp2p.io/) and its rust implementation*
 # charachteristics
 
-- Simplistic and Clean Architecture
 - Has minimum dependancies to third party libraries
 - Loosely coupled components
 - Extensible
