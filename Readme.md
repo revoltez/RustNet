@@ -31,13 +31,10 @@ Components are threads that communicate by sending messages to each other via ``
 every component must implement the ```NetComponent``` trait so it could be easily hooked with other components.
 
 ## Node
+An intermediary among components, providing a swift and straightforward approach to initiate rust_net components. Integrate your own components seamlessly, free from concerns about the underlying intricacies of inter-component communication. The Node serves as an intermediary, receiving external calls and effectively relaying them to the designated components. It's also possible to register custom user callbacks upon the receipt of external messages.
 
-- a mediator between component, for a fast and easy way to get started with rust_net components
-- add your own components without worrying about the implementation details of communicating with other components
-- Node acts as a mediator between components in that it receives external calls and forward them to the appropriate Components
-- can register user defined callbacks upon receival of external Messages
-
-PS: Order of addition of Components mut be respected in order for Node to work correctly, For example every Reliable Delivery Component Requires a Faillure detector, which means messing up the order will cause node to panic before execution.
+Note: The sequence of adding components must be upheld for the Node to function accurately. ensuring the correct order is vital, 
+for instance  each Reliable Delivery Component is dependent on a Failure Detector. Disrupting this order might lead to the Node panicking even before execution begins.
 
 ## Faillure Detector
 
