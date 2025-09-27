@@ -10,7 +10,7 @@ A Reactive Distributed Systems ToolBox, it provides an easy modular approach to 
 
 ##
 > __Warning__:
-*this project is for learning purposes only, it should not be used in production, instead check [libp2p](https://libp2p.io/) and its rust implementation*
+*this project is for learning purposes only*
 # charachteristics
 
 - Has minimum dependancies to third party libraries
@@ -25,13 +25,13 @@ Add this to your cargo.toml file
 rust_net = "1.0.0"
 ```
 
-# Components
+# Components 
 Components are threads that communicate by sending messages to each other via ```flume``` channels(very similar to mpsc channels), and by also publishing and subscribing to certain messages(like broadcasting messages to whomever is interetsed).
 
 every component must implement the ```NetComponent``` trait so it could be easily hooked with other components.
 
 ## Node
-An intermediary among components, providing a swift and straightforward approach to initiate rust_net components. Integrate your own components seamlessly, free from concerns about the underlying intricacies of inter-component communication. The Node serves as an intermediary, receiving external calls and effectively relaying them to the designated components. It's also possible to register custom user callbacks upon the receipt of external messages.
+An intermediary among components, providing a swift and straightforward approach to initiate rust_net. The Node serves as an intermediary, receiving external calls and effectively relaying them to the designated threads. It's also possible to register custom user callbacks upon the receipt of external messages.
 
 Note: The sequence of adding components must be upheld for the Node to function accurately. ensuring the correct order is vital, 
 for instance  each Reliable Delivery Component is dependent on a Failure Detector. Disrupting this order might lead to the Node panicking even before execution begins.
